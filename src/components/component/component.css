@@ -1,0 +1,27 @@
+.foot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card{
+    
+    border-radius: 15px;
+    text-align: left;
+    padding: 15px;
+    
+    background-color: white;
+    font-size: small;
+}
+button{
+    width: 100%;
+    padding-bottom: 10px;
+}
+img{
+    width: 320px;
+    border-radius: 10px;
+}
+.main{
+    display: flex;
+    gap: 10;
+    background-color: wh;
+}

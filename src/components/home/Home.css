@@ -1,0 +1,35 @@
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:10px;
+}
+img{
+    height: 144px;
+    width: 100%;
+}
+.main-div{
+    display: flex;
+    gap: 20px;
+    
+}
+.cart{
+    background-color:white ;
+    border-radius: 10px;
+    height: fit-content;
+    width: 600px;
+    padding: 10px;
+    text-align: left;
+    
+}
+.design{
+    color: #2F80ED;
+    font-weight: bolder;
+    
+
+}
+.orderedList{
+    text-align: left;
+}
+.param{
+    font-size: small;
+}
