@@ -6,7 +6,9 @@ const Home = () => {
 
    const [cards, setCard] = useState([]);
    const [select, setSelect] = useState([]);
-   const [intselect, setSelectInt] = useState([]);
+   const [selectss, setSelectss] = useState([]);
+
+   
 
    useEffect(() => {
     fetch('fake.json')
@@ -17,12 +19,21 @@ const Home = () => {
    const selects = (object) =>{
         const selectedCourse = [...select,object];
         setSelect(selectedCourse);
+        setSelectss(selectedCourse);
       
         
         
    }
    let i=1;
    let credits=0;
+   let remain=20;
+
+   selectss.map(calculate=>{
+
+    credits += parseInt(calculate.credit.slice(0,1));
+    remain -= parseInt(calculate.credit.slice(0,1));
+
+   })
 
     return (
         <div>
@@ -37,18 +48,18 @@ const Home = () => {
             </div>
             </div>
             <div className="cart">
-                <p className="design">Credit Hour remaining 7 hr</p>
+                
+                
+                    <p className="design">Credit Hour remaining {remain} hr</p>
+                    
+                
+                
                 <hr/>
                 <h3>Course Name:{select.length}</h3>
                 {
-                    
-
-                    
-                    (select.length>=0&&select.length<=20&&
-                    
-                intselect.map(show =>{ {credits += parseInt(show.credit.slice(0,1))}  <p className="param">{i++}. {show.name}</p>})
-                    )
+                    select.map(show => <p className="param">{i++}. {show.name}</p>)
                 }
+                
                 <hr/>
                 <h4>Total credit hour: {credits}hr</h4>
 
