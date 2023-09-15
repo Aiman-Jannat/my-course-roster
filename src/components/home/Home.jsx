@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Component from "../component/Component";
 
+
 import './Home.css';
 const Home = () => {
 
@@ -16,10 +17,12 @@ const Home = () => {
     .then(data => setCard(data));
    },[]);
 
-   const selects = (object) =>{
+   const selects = (object, isEnrolled) =>{
+    if(isEnrolled){
         const selectedCourse = [...select,object];
         setSelect(selectedCourse);
         setSelectss(selectedCourse);
+    }
       
         
         
@@ -34,7 +37,7 @@ const Home = () => {
     remain -= parseInt(calculate.credit.slice(0,1));
 
    })
-
+ 
     return (
         <div>
             <h1>Course Registration</h1>
@@ -55,7 +58,7 @@ const Home = () => {
                 
                 
                 <hr/>
-                <h3>Course Name:{select.length}</h3>
+                <h3>Course Name:</h3>
                 {
                     select.map(show => <p className="param">{i++}. {show.name}</p>)
                 }
@@ -68,6 +71,6 @@ const Home = () => {
             
         </div>
     );
-};
+}
 
-export default Home;
+export default (Home);

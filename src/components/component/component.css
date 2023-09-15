@@ -25,3 +25,9 @@ img{
     gap: 10;
     background-color: wh;
 }
+.display {
+    background-color: #ccc; /* Change the background color */
+    color: #888; /* Change the text color */
+    cursor: not-allowed; /* Change the cursor style */
+    /* Add any other styles you want to apply to disabled buttons */
+  }

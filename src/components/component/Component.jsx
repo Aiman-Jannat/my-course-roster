@@ -1,8 +1,20 @@
 
+import { useState } from 'react';
 import './component.css';
 const Component = ({card,course}) => {
     //console.log(typeof(course));
+    const [enrolled, setEnrolled] = useState(false);
     const {id, name, price, credit, details, img} = card;
+    
+        const handleClick = () =>{
+            setEnrolled(true);
+        }
+    
+
+    const handle = () => {
+        course(card,!enrolled);
+        handleClick();
+    }
     return (
         <div>
             <div className='card'>
@@ -23,7 +35,7 @@ const Component = ({card,course}) => {
 
                 </div>
 
-                <button onClick={()=>course(card)}>Select</button>
+                <button className={`${enrolled&&'display'}`} onClick={handle}>{enrolled? 'Already Enrolled': 'Select'}</button>
 
             </div>
             
