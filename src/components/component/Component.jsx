@@ -1,8 +1,9 @@
 
 import { useState } from 'react';
 import './component.css';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 let count = 20;
 
 const Component = ({card,course,credits,main}) => {
@@ -16,11 +17,11 @@ const Component = ({card,course,credits,main}) => {
     
 const handleToast = () =>{
     
-    alert('It is already Enrolled!!!');
+    toast('It is already Enrolled!!!');
 }
 const handleToast1 = () =>{
     
-    alert('20 Credit is already fulfilled!!!');
+    toast('20 Credit is already fulfilled!!!');
 }
 
  const calculateRemain = (credit) =>{
