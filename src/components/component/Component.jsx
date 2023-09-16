@@ -1,7 +1,10 @@
 
 import { useState } from 'react';
 import './component.css';
-const Component = ({card,course}) => {
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const Component = ({card,course,credits}) => {
     //console.log(typeof(course));
     const [enrolled, setEnrolled] = useState(false);
     const {id, name, price, credit, details, img} = card;

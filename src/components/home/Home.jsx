@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import Component from "../component/Component";
-
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 import './Home.css';
+import { flushSync } from "react-dom";
 const Home = () => {
 
    const [cards, setCard] = useState([]);
    const [select, setSelect] = useState([]);
-   const [selectss, setSelectss] = useState([]);
+//    const [acceed, setAcceed] = useState(false);
 
    
 
@@ -17,12 +19,14 @@ const Home = () => {
     .then(data => setCard(data));
    },[]);
 
-   const selects = (object, isEnrolled) =>{
-    if(isEnrolled){
+   const selects = (object,isEnrolled) =>{
+    if(isEnrolled&&credits<20)
+    {
         const selectedCourse = [...select,object];
         setSelect(selectedCourse);
-        setSelectss(selectedCourse);
+        
     }
+        
       
         
         
@@ -30,14 +34,25 @@ const Home = () => {
    let i=1;
    let credits=0;
    let remain=20;
-
-   selectss.map(calculate=>{
+   const handleToast = () =>{
+    alert('There is no remaining credit to add!!')
+   }
+   
+   select.map(calculate=>{
 
     credits += parseInt(calculate.credit.slice(0,1));
+    if(credits>20)
+    {
+        
+        credits -= parseInt(calculate.credit.slice(0,1));
+        remain += parseInt(calculate.credit.slice(0,1));
+    }
+    
     remain -= parseInt(calculate.credit.slice(0,1));
 
+
    })
- 
+
     return (
         <div>
             <h1>Course Registration</h1>
@@ -46,14 +61,16 @@ const Home = () => {
             <div className="cards">
             {
                 
-                cards.map(card => <Component card={card} course={selects}></Component>)
+                cards.map(card => <Component card={card} course={selects} credits={credits}></Component>)
             }
             </div>
             </div>
             <div className="cart">
                 
                 
-                    <p className="design">Credit Hour remaining {remain} hr</p>
+                   {<p className="design">Credit Hour remaining {remain} hr</p>  } 
+                   {/* {isAcceed&&{handleToast}} */}
+                   
                     
                 
                 
@@ -71,6 +88,6 @@ const Home = () => {
             
         </div>
     );
-}
+};
 
-export default (Home);
+export default Home;

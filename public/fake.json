@@ -12,7 +12,7 @@
       "name": "Introduction to C Programming",
       "price": 15000,
       "credit": "1hr",
-      "details": "It was mainly developed as a system programming language to write the UNIX operating system. ",
+      "details": "It was mainly developed as a system programming language to write the UNIX operating system. It is a useful language. ",
       "img": "https://contentstatic.techgig.com/thumb/msid-90325682,width-355,resizemode-4/5-C-programming-books-for-beginners-and-experts.jpg?41227"
     },
     {
@@ -20,7 +20,7 @@
       "name": "Introduction to Algorithms",
       "price": 25000,
       "credit": "2hr",
-      "details": "Algorithms form the basis of computer programming and are used to solve problems. ",
+      "details": "Algorithms form the basis of computer programming and are used to solve problems. It helps in solving problem.",
       "img": "https://www.investopedia.com/thmb/LCox4kcZaSKt94ylrcJ4NGsR1ao=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/algorithm-df9b57e8ea7c494b891da25987643fab.jpg"
     },
     {
@@ -35,7 +35,7 @@
       "id": 5,
       "name": "Introduction to C++ for DSA",
       "price": 10000,
-      "credit": "10hr",
+      "credit": "7hr",
       "details": "This DSA Self-Paced course covers all the topics of DSA in C++. Also, along with C++, we have Java examples and codes.",
       "img": "https://i0.wp.com/hacktechhub.com/wp-content/uploads/2022/08/Array-Data-Structure-in-c.jpg?fit=2240%2C1260&ssl=1"
     },
@@ -44,7 +44,7 @@
       "name": "Basic Data Structures",
       "price": 35000,
       "credit": "5hr",
-      "details": "In computer science, a data structure is a data organization, management, and storage format.  ",
+      "details": "In computer science, a data structure is a data organization, management, and storage format. It is so useful.  ",
       "img": "https://d8it4huxumps7.cloudfront.net/lambda-pdfs/opportunity-bannerImages/1692282235.png"
     },
     {
@@ -59,7 +59,7 @@
       "id": 8,
       "name": "Problem-Solving Part",
       "price": 23000,
-      "credit": " 2hr",
+      "credit": "2hr",
       "details": "Problem solving in programming skills helps to gain more knowledge over coding and programming, which is a major benefit.",
       "img": "https://i.ytimg.com/vi/CDGYzD3tLhI/maxresdefault.jpg"
     },
