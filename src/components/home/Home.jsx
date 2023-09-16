@@ -4,12 +4,12 @@ import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 import './Home.css';
-import { flushSync } from "react-dom";
+
 const Home = () => {
 
    const [cards, setCard] = useState([]);
    const [select, setSelect] = useState([]);
-//    const [acceed, setAcceed] = useState(false);
+const [xyz, setXyz] = useState([]);
 
    
 
@@ -26,6 +26,13 @@ const Home = () => {
         setSelect(selectedCourse);
         
     }
+    if(isEnrolled)
+    {
+        const selectedCourses = [...select,object];
+        setXyz(selectedCourses);
+
+    }
+    
         
       
         
@@ -35,10 +42,12 @@ const Home = () => {
    let credits=0;
    let remain=20;
    const handleToast = () =>{
-    alert('There is no remaining credit to add!!')
+    alert('There is no remaining credit to add!!');
    }
    
+   let re=20;
    select.map(calculate=>{
+    
 
     credits += parseInt(calculate.credit.slice(0,1));
     if(credits>20)
@@ -49,9 +58,13 @@ const Home = () => {
     }
     
     remain -= parseInt(calculate.credit.slice(0,1));
+    
 
+   });
+   xyz.map(data =>{
+    re -= parseInt(data.credit.slice(0,1));
 
-   })
+   });
 
     return (
         <div>
@@ -61,15 +74,15 @@ const Home = () => {
             <div className="cards">
             {
                 
-                cards.map(card => <Component card={card} course={selects} credits={credits}></Component>)
+                cards.map(card => <Component card={card} course={selects} main={re} credits={credits}></Component>)
             }
             </div>
             </div>
             <div className="cart">
                 
-                
+                   
                    {<p className="design">Credit Hour remaining {remain} hr</p>  } 
-                   {/* {isAcceed&&{handleToast}} */}
+                  
                    
                     
                 

@@ -11,6 +11,7 @@ function App() {
     <>
       <div>
       <Home></Home>
+      <ToastContainer/>
       </div>
       
       

@@ -3,8 +3,9 @@ import { useState } from 'react';
 import './component.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+let count = 20;
 
-const Component = ({card,course,credits}) => {
+const Component = ({card,course,credits,main}) => {
     //console.log(typeof(course));
     const [enrolled, setEnrolled] = useState(false);
     const {id, name, price, credit, details, img} = card;
@@ -13,10 +14,34 @@ const Component = ({card,course,credits}) => {
             setEnrolled(true);
         }
     
+const handleToast = () =>{
+    
+    alert('It is already Enrolled!!!');
+}
+const handleToast1 = () =>{
+    
+    alert('20 Credit is already fulfilled!!!');
+}
+
+ const calculateRemain = (credit) =>{
+        count -= parseInt(credit.slice(0,1));
+        console.log(count);
+        if(count<=0)
+        {
+            handleToast1();
+        }
+ }
 
     const handle = () => {
         course(card,!enrolled);
+        handleClick(enrolled);
+        calculateRemain(credit);
+    }
+    const handle1 = () => {
+        course(card,!enrolled);
         handleClick();
+        handleToast();
+        calculateRemain(credit);
     }
     return (
         <div>
@@ -37,9 +62,13 @@ const Component = ({card,course,credits}) => {
 
 
                 </div>
-
-                <button className={`${enrolled&&'display'}`} onClick={handle}>{enrolled? 'Already Enrolled': 'Select'}</button>
-
+                
+        {/* <button {enrolled? "className ='display'":"className=''"} onClick={handle}>{(enrolled)? 'Already Enrolled': 'Select'}</button> */}
+        {
+          
+            <button onClick={enrolled?handle1:handle}>Select</button>
+        }
+        
             </div>
             
         </div>
